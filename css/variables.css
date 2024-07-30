@@ -1,0 +1,12 @@
+:root {
+    --color-bg: #081b29;
+    --color-black: #252525;
+    --color-bg-variant: #025c80a8;
+    --color-primary:#00abf0;
+    --color-primary-variant: #00acf0a8;
+    --color-white: #fff;
+    --color-light: hsla(0,0%,100%,.6);
+    --color-hsl-blue:hsla(229, 71%, 41%, 0.8);
+    --color-hsl-blue2:hsl(229deg 100% 50% / 80%);
+    --transition: all 400ms ease;
+}

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url(./variables.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    transition: all .3s ease;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    display: block;
+    object-fit: cover;
+}
+
+.qualification li{
+    list-style-type: disc;
+}
+.btn-outline {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    font-weight: 600;
+    padding: 14px 30px;
+    color: var(--color-primary);
+    border: solid var(--color-primary) 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: max-content;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.btn-normal {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.3 ease;
+}
+
+.btn-normal:hover{
+    background-color: var(--color-white);
+}
+
+
+.navbar a:hover{
+    color: var(--color-primary);
+}
+
+.text-light{
+    color: var(--color-light);
+}
