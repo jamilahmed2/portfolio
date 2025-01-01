@@ -197,6 +197,7 @@
 .projects-item-img {
     border-radius: 1.5rem;
     overflow: hidden;
+    
 }
 
 .projects-item .projects-btns {
@@ -208,6 +209,10 @@
 .projects-item img {
     width: 100%;
     border-radius: 20px;
+    width: 100%;
+    aspect-ratio: 6/3;
+    margin: auto;
+    object-fit: cover;
 }
 
 /* contact */
