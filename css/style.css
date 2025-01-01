@@ -13,6 +13,78 @@
     left: 0px;
 }
 
+.animation {
+    height: 50px;
+    overflow: hidden;
+    margin-left: 1rem;
+
+}
+
+.animation>div>div {
+    padding: 0.25rem 0.75rem;
+    height: 2.81rem;
+    margin-bottom: 2.81rem;
+    display: inline-block;
+}
+
+.animation div:first-child {
+    animation: text-animation 8s infinite;
+}
+
+.first div {
+    background-color: #20a7d8;
+}
+
+.second div {
+    background-color: #CD921E;
+}
+
+.third div {
+    background-color: #c10528;
+}
+
+@keyframes text-animation {
+    0% {
+        margin-top: 0;
+    }
+
+    10% {
+        margin-top: 0;
+    }
+
+    20% {
+        margin-top: -5.62rem;
+    }
+
+    30% {
+        margin-top: -5.62rem;
+    }
+
+    40% {
+        margin-top: -11.24rem;
+    }
+
+    60% {
+        margin-top: -11.24rem;
+    }
+
+    70% {
+        margin-top: -5.62rem;
+    }
+
+    80% {
+        margin-top: -5.62rem;
+    }
+
+    90% {
+        margin-top: 0;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
 .brand {
     font-size: 18px;
 }
@@ -57,10 +129,12 @@
 
 .home-des {
     font-size: 1.5rem;
+    
 }
 
 .home-des h1 {
     color: var(--color-primary);
+    text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
 }
 
 
@@ -197,7 +271,7 @@
 .projects-item-img {
     border-radius: 1.5rem;
     overflow: hidden;
-    
+
 }
 
 .projects-item .projects-btns {
@@ -309,13 +383,14 @@ footer {
     margin-bottom: 4rem;
 }
 
-.copyright .arrow-up  {
+.copyright .arrow-up {
     background-color: var(--color-bg);
     padding: 10px;
     border-radius: 5px;
     border: none;
 }
-.copyright .arrow-up:hover{
+
+.copyright .arrow-up:hover {
     border: 2px solid var(--color-bg-variant);
     background: transparent;
 }
