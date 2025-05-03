@@ -1,0 +1,161 @@
+{
+    "skills": [
+      {
+        "id": 1,
+        "link": "#",
+        "name": "Digital Forensics & Cybersecurity",
+        "image": "https://cdn-icons-png.flaticon.com/512/11189/11189816.png"
+      },
+      {
+        "id": 2,
+        "link": "#",
+        "name": "Penetration Testing",
+        "image": "https://cdn-icons-png.flaticon.com/512/18133/18133431.png"
+      },
+      {
+        "id": 3,
+        "link": "#",
+        "name": "Vulnerability Assessments",
+        "image": "https://cdn-icons-png.flaticon.com/512/16196/16196307.png"
+      },
+      {
+        "id": 4,
+        "link": "#",
+        "name": "Ethical Hacking",
+        "image": "https://cdn-icons-png.flaticon.com/512/924/924915.png"
+      },
+      {
+        "id": 5,
+        "link": "#",
+        "name": "C",
+        "image": "https://skillicons.dev/icons?i=c"
+      },
+      {
+        "id": 6,
+        "link": "#",
+        "name": "C++",
+        "image": "https://skillicons.dev/icons?i=cpp"
+      },
+      {
+        "id": 7,
+        "link": "#",
+        "name": "C#",
+        "image": "https://skillicons.dev/icons?i=cs"
+      },
+      {
+        "id": 8,
+        "link": "#",
+        "name": "Python",
+        "image": "https://skillicons.dev/icons?i=python"
+      },
+      {
+        "id": 9,
+        "link": "#",
+        "name": "JavaScript",
+        "image": "https://skillicons.dev/icons?i=javascript"
+      },
+      {
+        "id": 10,
+        "link": "#",
+        "name": "Php Laravel",
+        "image": "https://skillicons.dev/icons?i=php,laravel"
+      },
+      {
+        "id": 11,
+        "link": "#",
+        "name": "Vue.js",
+        "image": "https://skillicons.dev/icons?i=vue"
+      },
+      {
+        "id": 12,
+        "link": "#",
+        "name": "React.JS",
+        "image": "https://skillicons.dev/icons?i=react"
+      },
+      {
+        "id": 13,
+        "link": "#",
+        "name": "Node.js",
+        "image": "https://skillicons.dev/icons?i=nodejs"
+      },
+      {
+        "id": 14,
+        "link": "#",
+        "name": "Express.js",
+        "image": "https://skillicons.dev/icons?i=express"
+      },
+      {
+        "id": 15,
+        "link": "#",
+        "name": "MongoDB",
+        "image": "https://skillicons.dev/icons?i=mongodb"
+      },
+      {
+        "id": 16,
+        "link": "#",
+        "name": "MySQL",
+        "image": "https://skillicons.dev/icons?i=mysql"
+      },
+      {
+        "id": 17,
+        "link": "#",
+        "name": "HTML",
+        "image": "https://skillicons.dev/icons?i=html"
+      },
+      {
+        "id": 18,
+        "link": "#",
+        "name": "CSS",
+        "image": "https://skillicons.dev/icons?i=css"
+      },
+      {
+        "id": 19,
+        "link": "#",
+        "name": "Tailwind CSS",
+        "image": "https://skillicons.dev/icons?i=tailwind"
+      },
+      {
+        "id": 20,
+        "link": "#",
+        "name": "Bootstrap",
+        "image": "https://skillicons.dev/icons?i=bootstrap"
+      },
+      {
+        "id": 21,
+        "link": "#",
+        "name": "Material UI",
+        "image": "https://skillicons.dev/icons?i=mui"
+      },
+      {
+        "id": 22,
+        "link": "#",
+        "name": "Figma",
+        "image": "https://skillicons.dev/icons?i=figma"
+      },
+      {
+        "id": 23,
+        "link": "#",
+        "name": "Photoshop",
+        "image": "https://skillicons.dev/icons?i=ps"
+      },
+      {
+        "id": 24,
+        "link": "#",
+        "name": "Canva",
+        "image": "https://cdn-icons-png.flaticon.com/512/16758/16758081.png"
+      },
+      {
+        "id": 25,
+        "link": "#",
+        "name": "WordPress",
+        "image": "https://skillicons.dev/icons?i=wordpress"
+      },
+      {
+        "id": 26,
+        "link": "#",
+        "name": "MS Office",
+        "image": "https://cdn-icons-png.flaticon.com/512/888/888867.png"
+      }
+    ]
+  }
+  

@@ -1,0 +1,76 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "image": "images/project_0.jpg",
+            "category": "Client Project",
+            "title": "Pro Stitch Global",
+            "tags": ["Laravel", "Ecommerce"],
+            "description": "<p>Pro Stitch Global is an ecommerce website built with Laravel. It allows users to shop for custom stitching and tailoring services. This project was built for a client while I was learning and was one of my early client projects.</p>"
+        },
+        {
+            "id": 2,
+            "image": "images/project_1.jpg",
+            "category": "Learning Project",
+            "title": "Chat App (MERN Stack)",
+            "tags": ["MERN Stack"],
+            "description": "<p>This is a simple chat application where users can chat with each other in real-time. Built using the MERN stack (MongoDB, Express.js, React, Node.js).</p>"
+        },
+        {
+            "id": 3,
+            "image": "images/project_2.jpg",
+            "category": "Learning Project",
+            "title": "Travel Booking App (MERN Stack)",
+            "tags": ["MERN Stack"],
+            "description": "<p>A travel booking app built with MERN stack. Users can book flights, hotels, and travel packages. This was a personal project to practice MERN stack development.</p>"
+        },
+        {
+            "id": 4,
+            "image": "images/project_3.jpg",
+            "category": "Learning Project",
+            "title": "Social Media App",
+            "tags": ["MERN Stack"],
+            "description": "<p>A basic social media app where users can post updates, like, and comment on posts. This app was built using the MERN stack to learn full-stack development.</p>"
+        },
+        {
+            "id": 5,
+            "image": "images/project_4.jpg",
+            "category": "Learning Project",
+            "title": "Blog App",
+            "tags": ["MERN Stack"],
+            "description": "<p>A blogging platform built with MERN stack where users can create and manage blogs. It includes CRUD operations for posts and user authentication.</p>"
+        },
+        {
+            "id": 6,
+            "image": "images/project_5.jpg",
+            "category": "Learning Project",
+            "title": "Notebooks App (MERN Stack)",
+            "tags": ["MERN Stack"],
+            "description": "<p>A simple notebooks app where users can create, edit, and delete notes. This project was created to practice building full-stack applications with the MERN stack.</p>"
+        },
+        {
+            "id": 7,
+            "image": "images/project_6.jpg",
+            "category": "Learning Project",
+            "title": "Jimmeflix",
+            "tags": ["PHP", "Laravel"],
+            "description": "<p>Jimmeflix is a movie streaming website built with PHP and Laravel. It allows users to browse and watch movies. This was another project to improve PHP and Laravel skills.</p>"
+        },
+        {
+            "id": 8,
+            "image": "images/project_7.jpg",
+            "category": "Learning Project",
+            "title": "Ecommerce App (MERN Stack)",
+            "tags": ["MERN Stack"],
+            "description": "<p>This is a fully functioning ecommerce website built using the MERN stack, allowing users to browse products and make purchases. It was built as a learning project.</p>"
+        },
+        {
+            "id": 9,
+            "image": "images/project_8.jpg",
+            "category": "Github",
+            "title": "Explore More On Github",
+            "tags": ["Projects"],
+            "description": "<p>All Project are available on github @jamilahmed2.</p>"
+        }
+    ]
+}
