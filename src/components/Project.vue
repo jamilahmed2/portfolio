@@ -27,11 +27,11 @@ const props = defineProps(["image", "category", "title", "tags", "codeLink", "li
                     </svg>
                     <span class="text-sm font-medium hidden group-hover/link:inline">Code</span>
                 </a>
-                <a target="_blank" v-if="props.liveLink" :href="liveLink" class="group/link flex items-center gap-2 transition-all duration-300 hover:text-secondary-500 dark:hover:text-secondary-400" title="View on Shopify App Store">
+                <a target="_blank" v-if="props.liveLink" :href="liveLink" class="group/link flex items-center gap-2 transition-all duration-300 hover:text-secondary-500 dark:hover:text-secondary-400" :title="liveLink.includes('shopify') ? 'View on Shopify App Store' : liveLink.includes('chrome') ? 'View on Chrome Web Store' : 'View Live'">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                     </svg>
-                    <span class="text-sm font-medium hidden group-hover/link:inline">Shopify App</span>
+                    <span class="text-sm font-medium hidden group-hover/link:inline">{{ liveLink.includes('shopify') ? 'Shopify App' : liveLink.includes('chrome') ? 'Chrome Extension' : 'Live' }}</span>
                 </a>
                 <a target="_blank" v-if="props.websiteLink" :href="websiteLink" class="group/link flex items-center gap-2 transition-all duration-300 hover:text-secondary-500 dark:hover:text-secondary-400" title="Visit Website">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">

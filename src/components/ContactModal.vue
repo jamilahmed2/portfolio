@@ -52,7 +52,6 @@ const contactForm = ref({
 
 const submitForm = () => {
     // Handle form submission
-    console.log('Form submitted:', contactForm.value);
     // Add your form submission logic here
     closeModal();
 };
