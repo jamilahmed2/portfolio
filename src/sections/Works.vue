@@ -17,7 +17,7 @@ let showAllWork = ref(false);
 
             <div class="relative">
                 <div :class="showAllWork ? '' : 'h-[2100px] overflow-y-hidden md:h-[1650px]'" class="grid grid-cols-1 gap-16 md:gap-24">
-                    <Project  v-for="project in projects" :key="project.id" :image="project.image" :category="project.category" :title="project.title" :tags="project.tags" :code-link="project.code_link" :live-link="project.live_link">
+                    <Project  v-for="project in projects" :key="project.id" :image="project.image" :category="project.category" :title="project.title" :tags="project.tags" :code-link="project.code_link" :live-link="project.live_link" :website-link="project.website_link">
                         <template #description>
                             <div v-html="project.description"></div>
                         </template>

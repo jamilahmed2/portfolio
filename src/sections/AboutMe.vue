@@ -103,7 +103,7 @@ let currentTab = ref(1);
 
                                 <a href="#" target="_blank"
                                     class="text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium flex items-center justify-start w-fit transition-all duration-300">
-                                    <a href="../../public/Jamil Ahmed Resume.pdf" class="mr-2">My Resume</a>
+                                    <a href="../../public/resume.pdf" class="mr-2">My Resume</a>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -134,6 +134,18 @@ let currentTab = ref(1);
                                 </Experience>
 
                                 <!-- 💻 Development Experience -->
+                                <Experience designation="Shopify App Developer" company="Chatifai"
+                                    timeline="February 2025 - Present">
+                                    <template #description>
+                                        <ul>
+                                            <li>Developed Chatifai, a multilingual AI chatbot Shopify app using Laravel and Vue.js.</li>
+                                            <li>Implemented AI-powered product recommendations and real-time inventory integration.</li>
+                                            <li>Built features including live chat with agent handoff, abandoned cart recovery, and order tracking.</li>
+                                            <li>Successfully published on Shopify App Store with zero-code installation.</li>
+                                        </ul>
+                                    </template>
+                                </Experience>
+
                                 <Experience designation="Laravel Developer" company="SU Solz"
                                     timeline="November 2024 - Present (6 months)">
                                     <template #description>

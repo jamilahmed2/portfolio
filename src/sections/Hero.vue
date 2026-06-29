@@ -8,7 +8,7 @@ let typed;
 
 onMounted(() => {
     typed = new Typed(typedElement.value, {
-        strings: ["Crafting Digital Experiences", "Web Developer"],
+        strings: ["Crafting Digital Experiences", "Full Stack Developer"],
         typeSpeed: 50,
         backSpeed: 30,
         backDelay: 5000,
@@ -105,9 +105,9 @@ onBeforeUnmount(() => {
                 }"
                 class="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-16 space-y-4 md:space-x-7 md:space-y-0 w-full"
             >
-                <LinkButton link="#about" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4"> About Me </LinkButton>
+                <LinkButton link="#about" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4"> Discover My Story </LinkButton>
                 <LinkButton btn-type="filled" link="#works" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4">
-                    <span>See My Works</span>
+                    <span>Explore My Projects</span>
                     <template #icon>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:h-6 md:w-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />

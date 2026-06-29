@@ -4,8 +4,19 @@ import { ref } from "vue";
 import { useMobileNav } from "@/composables/mobile-nav";
 import LinkButton from "@/components/LinkButton.vue";
 import DarkModeSwitch from "@/components/DarkModeSwitch.vue";
+import ContactModal from "@/components/ContactModal.vue";
 
 let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
+
+const showContactModal = ref(false);
+
+const openContactModal = () => {
+    showContactModal.value = true;
+};
+
+const closeContactModal = () => {
+    showContactModal.value = false;
+};
 </script>
 
 <template>
@@ -16,7 +27,7 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
                 <img class="w-[170px] md:w-[220px] dark:hidden inline-block" src="/logo-dark.png" alt="Web Developer / Designer" />
             </router-link>
             <div class="custom-nav hidden md:block">
-                <ul v-scroll-spy-active="{ selector: 'li a.menu-link-1', class: 'active-link' }" class="flex space-x-12">
+                <ul v-scroll-spy-active="{ selector: 'li a.menu-link-1', class: 'active-link' }" class="flex items-center space-x-12">
                     <li>
                         <NavLink :link="'#home'">Home</NavLink>
                     </li>
@@ -31,6 +42,14 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
                     </li>
                     <li>
                         <DarkModeSwitch />
+                    </li>
+                    <li>
+                        <button
+                            @click="openContactModal"
+                            class="px-4 py-2 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300"
+                        >
+                            Let's Talk
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -83,6 +102,9 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
         </transition>
     </template>
     <!-- Mobile Nav -->
+
+    <!-- Contact Modal -->
+    <ContactModal :show="showContactModal" @close="closeContactModal" />
 </template>
 
 <style scoped>

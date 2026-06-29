@@ -2,75 +2,108 @@
     "projects": [
         {
             "id": 1,
-            "image": "images/project_0.jpg",
-            "category": "Client Project",
-            "title": "Pro Stitch Global",
-            "tags": ["Laravel", "Ecommerce"],
-            "description": "<p>Pro Stitch Global is an ecommerce website built with Laravel. It allows users to shop for custom stitching and tailoring services. This project was built for a client while I was learning and was one of my early client projects.</p>"
+            "image": "images/chatifai/1.png",
+            "category": "AI Chatbot",
+            "title": "Chatifai - AI Shopify Chatbot",
+            "tags": ["AI", "Shopify", "Next.js", "PostgreSQL", "Prisma"],
+            "description": "<p>Chatifai is a multilingual AI chatbot Shopify app that learns your store's products, FAQs, and policies automatically. It answers customer questions, recommends products based on browsing behavior, and supports checkout with real-time inventory updates.</p><p>Features include live chat with agent handoff, order tracking, abandoned cart recovery with popup reminders, and a fully customizable widget. Supports multiple languages with no coding required. Install and go live in minutes.</p>",
+            "live_link": "https://apps.shopify.com/chatifai",
+            "website_link": "https://chatifai.eu"
         },
         {
             "id": 2,
-            "image": "images/project_1.jpg",
-            "category": "Learning Project",
-            "title": "Chat App (MERN Stack)",
-            "tags": ["MERN Stack"],
-            "description": "<p>This is a simple chat application where users can chat with each other in real-time. Built using the MERN stack (MongoDB, Express.js, React, Node.js).</p>"
+            "image": "images/project_0.jpg",
+            "category": "Ecommerce",
+            "title": "Pro Stitch Global",
+            "tags": ["Laravel", "MySQL", "Payment Gateway"],
+            "description": "<p>Pro Stitch Global is an ecommerce website built with Laravel. It allows users to shop for custom stitching and tailoring services. This project was built for a client while I was learning and was one of my early client projects.</p>",
+            "website_link": "https://prostitchglobal.com"
         },
         {
             "id": 3,
-            "image": "images/project_2.jpg",
-            "category": "Learning Project",
-            "title": "Travel Booking App (MERN Stack)",
-            "tags": ["MERN Stack"],
-            "description": "<p>A travel booking app built with MERN stack. Users can book flights, hotels, and travel packages. This was a personal project to practice MERN stack development.</p>"
+            "image": "images/project_6.jpg",
+            "category": "Entertainment",
+            "title": "Jimmeflix",
+            "tags": ["PHP", "Laravel", "Video Streaming"],
+            "description": "<p>Jimmeflix is a movie streaming website built with PHP and Laravel. It allows users to browse and watch movies. This was another project to improve PHP and Laravel skills.</p>",
+            "website_link": "https://jimmeflix.com"
         },
         {
             "id": 4,
-            "image": "images/project_3.jpg",
-            "category": "Learning Project",
-            "title": "Social Media App",
-            "tags": ["MERN Stack"],
-            "description": "<p>A basic social media app where users can post updates, like, and comment on posts. This app was built using the MERN stack to learn full-stack development.</p>"
+            "image": "images/adzen/adzen.png",
+            "category": "Browser Extension",
+            "title": "AdZen - Ad Blocker",
+            "tags": ["Chrome Extension", "Manifest V3", "Ad Blocking"],
+            "description": "<p>AdZen is a powerful, lightweight ad blocker for modern web. Block ads on YouTube, Twitch & all sites with visual mode. Stop popups, trackers & cookie banners!</p><p>Features include YouTube & Twitch ad blocking, universal web protection, GDPR cookie banner removal, ultra-lightweight performance, statistics dashboard, and customizable filter lists. Privacy-first with no data collection. 5.0★ rating with 390+ users.</p>",
+            "website_link": "https://extendsolz.com",
+            "live_link": "https://chromewebstore.google.com/detail/adzen-ad-blocker/nldmchmlloiacnbnnejelcebpofhbapi"
         },
         {
             "id": 5,
-            "image": "images/project_4.jpg",
-            "category": "Learning Project",
-            "title": "Blog App",
-            "tags": ["MERN Stack"],
-            "description": "<p>A blogging platform built with MERN stack where users can create and manage blogs. It includes CRUD operations for posts and user authentication.</p>"
+            "image": "images/aivibedetector/img1.png",
+            "category": "Developer Tool",
+            "title": "AIVibeDetector",
+            "tags": ["Chrome Extension", "Tech Stack Detection", "AI Detection"],
+            "description": "<p>AIVibeDetector is a professional-grade browser extension designed for developers, designers, and digital professionals who need to understand the technology stack and AI involvement of any website instantly.</p><p>Detect 150+ technologies with instant analysis (30-650ms), smart caching, dual view interface for AI Detection and Tech Stack views. Features beautiful glassmorphism design, comprehensive reports, and complete privacy-first approach with local analysis. Perfect for web developers, designers, agencies, and tech recruiters.</p>",
+            "website_link": "https://extendsolz.com/ai-vibe-detector.html",
+            "live_link": "https://chromewebstore.google.com/detail/aivibedetector/gkcmadaannglkkmgeokjgjjjcbhkcbhh"
         },
         {
             "id": 6,
-            "image": "images/project_5.jpg",
-            "category": "Learning Project",
-            "title": "Notebooks App (MERN Stack)",
-            "tags": ["MERN Stack"],
-            "description": "<p>A simple notebooks app where users can create, edit, and delete notes. This project was created to practice building full-stack applications with the MERN stack.</p>"
+            "image": "images/project_1.jpg",
+            "category": "Real-time Chat",
+            "title": "Chat App (MERN Stack)",
+            "tags": ["MERN Stack", "Socket.io", "Real-time"],
+            "description": "<p>This is a simple chat application where users can chat with each other in real-time. Built using the MERN stack (MongoDB, Express.js, React, Node.js).</p>"
         },
         {
             "id": 7,
-            "image": "images/project_6.jpg",
-            "category": "Learning Project",
-            "title": "Jimmeflix",
-            "tags": ["PHP", "Laravel"],
-            "description": "<p>Jimmeflix is a movie streaming website built with PHP and Laravel. It allows users to browse and watch movies. This was another project to improve PHP and Laravel skills.</p>"
+            "image": "images/project_2.jpg",
+            "category": "Travel Booking",
+            "title": "Travel Booking App (MERN Stack)",
+            "tags": ["MERN Stack", "Stripe", "Booking"],
+            "description": "<p>A travel booking app built with MERN stack. Users can book flights, hotels, and travel packages. This was a personal project to practice MERN stack development.</p>"
         },
         {
             "id": 8,
-            "image": "images/project_7.jpg",
-            "category": "Learning Project",
-            "title": "Ecommerce App (MERN Stack)",
-            "tags": ["MERN Stack"],
-            "description": "<p>This is a fully functioning ecommerce website built using the MERN stack, allowing users to browse products and make purchases. It was built as a learning project.</p>"
+            "image": "images/project_3.jpg",
+            "category": "Social Media",
+            "title": "Social Media App",
+            "tags": ["MERN Stack", "JWT", "Authentication"],
+            "description": "<p>A basic social media app where users can post updates, like, and comment on posts. This app was built using the MERN stack to learn full-stack development.</p>"
         },
         {
             "id": 9,
+            "image": "images/project_4.jpg",
+            "category": "Blogging Platform",
+            "title": "Blog App",
+            "tags": ["MERN Stack", "MongoDB", "CMS"],
+            "description": "<p>A blogging platform built with MERN stack where users can create and manage blogs. It includes CRUD operations for posts and user authentication.</p>"
+        },
+        {
+            "id": 10,
+            "image": "images/project_5.jpg",
+            "category": "Note Taking",
+            "title": "Notebooks App (MERN Stack)",
+            "tags": ["MERN Stack", "Context API", "Notes"],
+            "description": "<p>A simple notebooks app where users can create, edit, and delete notes. This project was created to practice building full-stack applications with the MERN stack.</p>"
+        },
+        {
+            "id": 11,
+            "image": "images/project_7.jpg",
+            "category": "Ecommerce",
+            "title": "Ecommerce App (MERN Stack)",
+            "tags": ["MERN Stack", "Redux", "Shopping Cart"],
+            "description": "<p>This is a fully functioning ecommerce website built using the MERN stack, allowing users to browse products and make purchases. It was built as a learning project.</p>"
+        },
+        {
+            "id": 12,
             "image": "images/project_8.jpg",
-            "category": "Github",
+            "category": "More Projects",
             "title": "Explore More On Github",
-            "tags": ["Projects"],
-            "description": "<p>All Project are available on github @jamilahmed2.</p>"
+            "tags": ["Open Source", "Portfolio"],
+            "description": "<p>All projects are available on GitHub @jamilahmed2. Check out more of my work and contributions!</p>",
+            "code_link": "https://github.com/jamilahmed2"
         }
     ]
 }

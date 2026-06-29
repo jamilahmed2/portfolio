@@ -8,7 +8,9 @@ import Toast from '@/components/Toast.vue';
 import { reactive, ref } from 'vue';
 
 const api =
-    'Jamil Ahmed';
+    'https://formspree.io/f/YOUR_FORM_ID'; // Replace with your Formspree form ID
+    // Alternative: Use Discord webhook URL like: 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN'
+    // Alternative: Use your own backend API endpoint
 
 const contactForm = reactive({
     name: '',
