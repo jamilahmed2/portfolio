@@ -28,13 +28,21 @@
 
 <body class="relative antialiased overflow-x-hidden font-heading dark:bg-slate-900 dark:text-slate-400 text-gray-700 transition-colors duration-300 scroll-smooth">
 
-<!-- Hidden form for Netlify detection -->
+<!-- Hidden forms for Netlify detection -->
 <form name="contact-modal" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
+    <input type="text" name="subject" />
     <textarea name="message"></textarea>
     <input type="text" name="bot-field" />
 </form>
+
+<form name="contact-page" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
+    <input type="text" name="bot-field" />
 </form>
 
 <div id="app"></div>

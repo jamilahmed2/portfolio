@@ -47,6 +47,7 @@ const handleEsc = (e) => {
 const contactForm = ref({
     name: '',
     email: '',
+    subject: '',
     message: ''
 });
 
@@ -65,6 +66,7 @@ const submitForm = async () => {
         formData.append('form-name', 'contact-modal');
         formData.append('name', contactForm.value.name);
         formData.append('email', contactForm.value.email);
+        formData.append('subject', contactForm.value.subject || 'No subject');
         formData.append('message', contactForm.value.message);
 
         const response = await fetch('/', {
@@ -78,6 +80,7 @@ const submitForm = async () => {
             contactForm.value = {
                 name: '',
                 email: '',
+                subject: '',
                 message: ''
             };
             // Close modal after 3 seconds
@@ -268,6 +271,21 @@ const submitForm = async () => {
                                         :disabled="isSubmitting"
                                         class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                         placeholder="your.email@example.com"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label for="modal-subject" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                        Subject
+                                    </label>
+                                    <input
+                                        v-model="contactForm.subject"
+                                        type="text"
+                                        id="modal-subject"
+                                        name="subject"
+                                        :disabled="isSubmitting"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                        placeholder="Subject (optional)"
                                     />
                                 </div>
 

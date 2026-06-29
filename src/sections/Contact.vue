@@ -7,11 +7,6 @@ import TextArea from '@/components/TextArea.vue';
 import Toast from '@/components/Toast.vue';
 import { reactive, ref } from 'vue';
 
-const api =
-    'https://formspree.io/f/YOUR_FORM_ID'; // Replace with your Formspree form ID
-    // Alternative: Use Discord webhook URL like: 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN'
-    // Alternative: Use your own backend API endpoint
-
 const contactForm = reactive({
     name: '',
     email: '',
@@ -27,13 +22,19 @@ const contactFormErrors = reactive({
 });
 
 let loading = ref(false);
-
 let showToast = ref(false);
+
 const handleClose = () => {
     showToast.value = false;
 };
 
-const submitContactForm = () => {
+const submitContactForm = async () => {
+    // Reset errors
+    contactFormErrors.name = '';
+    contactFormErrors.email = '';
+    contactFormErrors.message = '';
+
+    // Validation
     if (contactForm.name === '' || contactForm.name.length <= 3) {
         contactFormErrors.name = 'Please enter your name';
         return;
@@ -44,41 +45,41 @@ const submitContactForm = () => {
         return;
     }
     if (contactForm.message === '' || contactForm.message.length <= 20) {
-        contactFormErrors.message = 'Please enter your message';
+        contactFormErrors.message = 'Please enter your message (minimum 20 characters)';
         return;
     }
 
     loading.value = true;
 
-    const webhookBody = {
-        embeds: [
-            {
-                title: 'Hey, You received a message from your portfolio website.',
-                fields: [
-                    { name: 'Name', value: contactForm.name || 'N/A' },
-                    { name: 'Email', value: contactForm.email || 'N/A' },
-                    { name: 'Subject', value: contactForm.subject || 'N/A' },
-                    { name: 'Message', value: contactForm.message || 'N/A' },
-                ],
-            },
-        ],
-    };
+    try {
+        // Create FormData for Netlify Forms
+        const formData = new FormData();
+        formData.append('form-name', 'contact-page');
+        formData.append('name', contactForm.name);
+        formData.append('email', contactForm.email);
+        formData.append('subject', contactForm.subject || 'No subject');
+        formData.append('message', contactForm.message);
 
-    fetch(api, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(webhookBody),
-    }).then((response) => {
-        if (!response.ok) {
-            throw new Error('Something went wrong ' + response.statusText);
-        } else {
+        const response = await fetch('/', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
             resetForm();
-            loading.value = false;
             showToast.value = true;
+            setTimeout(() => {
+                showToast.value = false;
+            }, 5000);
+        } else {
+            throw new Error('Form submission failed');
         }
-    });
+    } catch (error) {
+        console.error('Form submission error:', error);
+        alert('Something went wrong. Please try again or contact me directly via email.');
+    } finally {
+        loading.value = false;
+    }
 };
 
 const resetForm = () => {
@@ -238,8 +239,20 @@ const resetForm = () => {
                 <div class="md:col-span-7">
                     <form
                         @submit.prevent="submitContactForm"
+                        name="contact-page"
+                        method="POST"
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
                         class="grid grid-cols-2 gap-x-6 gap-y-8"
                     >
+                        <!-- Netlify form detection -->
+                        <input type="hidden" name="form-name" value="contact-page" />
+                        
+                        <!-- Honeypot for spam protection -->
+                        <div style="display: none;">
+                            <input name="bot-field" />
+                        </div>
+
                         <div
                             class="col-span-2 md:col-span-1 flex flex-col space-y-3"
                         >
@@ -310,7 +323,7 @@ const resetForm = () => {
                                 v-model="contactForm.message"
                                 id="message"
                                 class="h-40"
-                                name="name"
+                                name="message"
                                 placeholder="Enter your message"
                                 :error="contactFormErrors.message"
                             />
