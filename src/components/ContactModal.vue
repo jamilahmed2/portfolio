@@ -68,6 +68,7 @@ const submitForm = async () => {
         formData.append('email', contactForm.value.email);
         formData.append('subject', contactForm.value.subject || 'No subject');
         formData.append('message', contactForm.value.message);
+        formData.append('bot-field', ''); // Honeypot field
 
         const response = await fetch('/', {
             method: 'POST',
@@ -75,6 +76,7 @@ const submitForm = async () => {
         });
 
         if (response.ok) {
+            console.log('Form submitted successfully to Netlify');
             submitSuccess.value = true;
             // Reset form
             contactForm.value = {
