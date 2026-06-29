@@ -54,24 +54,22 @@ const isSubmitting = ref(false);
 const submitSuccess = ref(false);
 const submitError = ref(false);
 
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-        .join('&');
-};
-
 const submitForm = async () => {
     isSubmitting.value = true;
     submitError.value = false;
+    submitSuccess.value = false;
 
     try {
+        // Create FormData object
+        const formData = new FormData();
+        formData.append('form-name', 'contact-modal');
+        formData.append('name', contactForm.value.name);
+        formData.append('email', contactForm.value.email);
+        formData.append('message', contactForm.value.message);
+
         const response = await fetch('/', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({
-                'form-name': 'contact-modal',
-                ...contactForm.value
-            })
+            body: formData
         });
 
         if (response.ok) {
@@ -82,15 +80,16 @@ const submitForm = async () => {
                 email: '',
                 message: ''
             };
-            // Close modal after 2 seconds
+            // Close modal after 3 seconds
             setTimeout(() => {
                 closeModal();
                 submitSuccess.value = false;
-            }, 2000);
+            }, 3000);
         } else {
             throw new Error('Form submission failed');
         }
     } catch (error) {
+        console.error('Form submission error:', error);
         submitError.value = true;
     } finally {
         isSubmitting.value = false;
