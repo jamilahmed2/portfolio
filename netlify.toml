@@ -1,0 +1,16 @@
+[build]
+  # Build command
+  command = "npm run build"
+  
+  # Directory that contains the built files
+  publish = "dist"
+
+# Node version to use
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirects for Vue Router (backup to _redirects file)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
