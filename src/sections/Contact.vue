@@ -224,7 +224,7 @@ const resetForm = () => {
                                 </h4>
                                 <p>
                                     <a
-                                        href="https://www.google.com/maps/place/Dhaka/@23.7809757,90.3372882,12z/"
+                                        href="https://www.google.com/maps/place/karachi"
                                         target="_blank"
                                         class="transition-all duration-300 hover:text-secondary-500 dark:hover:text-secondary-300"
                                         >Karachi, Pakistan</a

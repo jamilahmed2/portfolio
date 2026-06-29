@@ -50,10 +50,51 @@ const contactForm = ref({
     message: ''
 });
 
-const submitForm = () => {
-    // Handle form submission
-    // Add your form submission logic here
-    closeModal();
+const isSubmitting = ref(false);
+const submitSuccess = ref(false);
+const submitError = ref(false);
+
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+};
+
+const submitForm = async () => {
+    isSubmitting.value = true;
+    submitError.value = false;
+
+    try {
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({
+                'form-name': 'contact-modal',
+                ...contactForm.value
+            })
+        });
+
+        if (response.ok) {
+            submitSuccess.value = true;
+            // Reset form
+            contactForm.value = {
+                name: '',
+                email: '',
+                message: ''
+            };
+            // Close modal after 2 seconds
+            setTimeout(() => {
+                closeModal();
+                submitSuccess.value = false;
+            }, 2000);
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        submitError.value = true;
+    } finally {
+        isSubmitting.value = false;
+    }
 };
 </script>
 
@@ -161,7 +202,44 @@ const submitForm = () => {
                                 </p>
                             </div>
 
-                            <form @submit.prevent="submitForm" class="space-y-5 max-w-xl mx-auto">
+                            <form 
+                                @submit.prevent="submitForm" 
+                                name="contact-modal" 
+                                method="POST" 
+                                data-netlify="true" 
+                                netlify-honeypot="bot-field"
+                                class="space-y-5 max-w-xl mx-auto"
+                            >
+                                <!-- Netlify form detection -->
+                                <input type="hidden" name="form-name" value="contact-modal" />
+                                
+                                <!-- Honeypot for spam protection -->
+                                <div style="display: none;">
+                                    <input name="bot-field" />
+                                </div>
+
+                                <!-- Success Message -->
+                                <div 
+                                    v-if="submitSuccess" 
+                                    class="bg-green-100 dark:bg-green-900/30 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg flex items-center gap-2"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Message sent successfully! I'll get back to you soon.</span>
+                                </div>
+
+                                <!-- Error Message -->
+                                <div 
+                                    v-if="submitError" 
+                                    class="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg flex items-center gap-2"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                                    </svg>
+                                    <span>Oops! Something went wrong. Please try again.</span>
+                                </div>
+
                                 <div>
                                     <label for="modal-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                         Name *
@@ -170,8 +248,10 @@ const submitForm = () => {
                                         v-model="contactForm.name"
                                         type="text"
                                         id="modal-name"
+                                        name="name"
                                         required
-                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                                        :disabled="isSubmitting"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                         placeholder="Your name"
                                     />
                                 </div>
@@ -184,8 +264,10 @@ const submitForm = () => {
                                         v-model="contactForm.email"
                                         type="email"
                                         id="modal-email"
+                                        name="email"
                                         required
-                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                                        :disabled="isSubmitting"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                         placeholder="your.email@example.com"
                                     />
                                 </div>
@@ -197,19 +279,26 @@ const submitForm = () => {
                                     <textarea
                                         v-model="contactForm.message"
                                         id="modal-message"
+                                        name="message"
                                         required
                                         rows="5"
-                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
+                                        :disabled="isSubmitting"
+                                        class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                                         placeholder="Tell me about your project..."
                                     ></textarea>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                                    :disabled="isSubmitting"
+                                    class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    <span>Send Message</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                    <svg v-if="isSubmitting" class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    <span>{{ isSubmitting ? 'Sending...' : 'Send Message' }}</span>
+                                    <svg v-if="!isSubmitting" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                                     </svg>
                                 </button>
