@@ -1,1 +1,10 @@
+# Don't redirect static files - serve them directly
+/resume.pdf  /resume.pdf  200
+/images/*  /images/:splat  200
+/*.png  /:splat  200
+/*.jpg  /:splat  200
+/*.svg  /:splat  200
+/*.ico  /:splat  200
+
+# Redirect all other routes to index.html for Vue Router
 /*  /index.html  200

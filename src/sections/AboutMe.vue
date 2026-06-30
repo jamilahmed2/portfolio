@@ -101,9 +101,9 @@ let currentTab = ref(1);
                                         clients.</p>
                                 </div>
 
-                                <a href="#" target="_blank"
+                                <a href="/resume.pdf" target="_blank"
                                     class="text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium flex items-center justify-start w-fit transition-all duration-300">
-                                    <a href="../../public/resume.pdf" class="mr-2">My Resume</a>
+                                    <span class="mr-2">My Resume</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
